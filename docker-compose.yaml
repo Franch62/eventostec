@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:16'
+    environment:
+      - 'POSTGRES_DB=eventostec'
+      - 'POSTGRES_PASSWORD=2748'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432:5432'
