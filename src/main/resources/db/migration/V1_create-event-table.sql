@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
-CREATE TABLE event(
-    id UUID get_random_uuid() PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS event(
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     description VARCHAR(100) NOT NULL,
     image_url VARCHAR(100) NOT NULL,
