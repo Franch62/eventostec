@@ -27,4 +27,40 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "event_id")
     private Event event;
+
+    // Getter e Setter para id
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    // Getter e Setter para city
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    // Getter e Setter para uf
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    // Getter e Setter para event
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
 }

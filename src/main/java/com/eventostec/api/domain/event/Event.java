@@ -14,11 +14,12 @@ import java.util.UUID;
 
 @Table(name = "event")
 @Entity
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class Event {
+
     @Id
     @GeneratedValue
     private UUID id;
@@ -28,5 +29,68 @@ public class Event {
     private String eventUrl;
     private Boolean remote;
     private Date date;
+
+    // Getter e Setter para id
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    // Getter e Setter para title
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    // Getter e Setter para description
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Getter e Setter para imgUrl
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    // Getter e Setter para eventUrl
+    public String getEventUrl() {
+        return eventUrl;
+    }
+
+    public void setEventUrl(String eventUrl) {
+        this.eventUrl = eventUrl;
+    }
+
+    // Getter e Setter para remote
+    public Boolean getRemote() {
+        return remote;
+    }
+
+    public void setRemote(Boolean remote) {
+        this.remote = remote;
+    }
+
+    // Getter e Setter para date
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
 }
