@@ -22,7 +22,6 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-
     @PostMapping(consumes = "multipart/form-data")
     public ResponseEntity<Event> create(@RequestParam("title") String title,
                                         @RequestParam(value = "description", required = false) String description,
@@ -37,6 +36,7 @@ public class EventController {
         return ResponseEntity.ok(newEvent);
     }
 
+
     @GetMapping("/{eventId}")
     public ResponseEntity<EventDetailsDTO> getEventDetails(@PathVariable UUID eventId){
         EventDetailsDTO eventDetails = eventService.getEventDetails(eventId);
@@ -49,6 +49,7 @@ public class EventController {
         List<EventResponseDTO> allEvents = this.eventService.getUpcomingEvents(page, size);
         return ResponseEntity.ok(allEvents);
     }
+
 
     @GetMapping("/filter")
     public ResponseEntity<List<EventResponseDTO>> filterEvents(@RequestParam(defaultValue = "0") int page,
