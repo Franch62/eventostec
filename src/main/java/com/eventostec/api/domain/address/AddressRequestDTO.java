@@ -4,5 +4,5 @@ import com.eventostec.api.domain.event.Event;
 
 import java.util.UUID;
 
-public record AddressRequestDTO(String city, String uf, Event event){
+public record AddressRequestDTO(String city, String state, Event event){
 }

@@ -1,9 +1,7 @@
 package com.eventostec.api.domain.event;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.eventostec.api.domain.address.Address;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,16 +17,19 @@ import java.util.UUID;
 @Setter
 @Getter
 public class Event {
-
     @Id
     @GeneratedValue
     private UUID id;
+
     private String title;
     private String description;
     private String imgUrl;
     private String eventUrl;
     private Boolean remote;
     private Date date;
+
+    @OneToOne(mappedBy = "event", cascade = CascadeType.ALL)
+    private Address address;
 
     // Getter e Setter para id
     public UUID getId() {
@@ -93,4 +94,13 @@ public class Event {
         this.date = date;
     }
 
+    // Getter e Setter para address
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
+
